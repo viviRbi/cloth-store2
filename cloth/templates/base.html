@@ -1,22 +1,24 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clothing Store</title>
+    <link rel="stylesheet" href="{% static 'css/main-style.css' %}" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cloth_Store</title>
-</head>
+  <body>
+    <section class="header">
+      <a href="/"><h1 class="main-title">Main page</h1></a>
+      <nav class="nav-bar">
+        <a href="#"><h1>Category</h1></a>
+        <a href="cloth/product_list.html"><h1>Product</h1></a>
+      </nav>
+    </section>
 
-<body>
-  <nav>
-    <a>Main page</a>
-    <a>Category</a>
-    <a href="cloth/product_list.html">Product</a>
-  </nav>
-  <div> {% block content %} {%endblock%} </div>
-  {%include 'footer.html'%}
-
-</body>
-
+    <div>{% block content %} {%endblock%}</div>
+    {%include 'footer.html'%}
+  </body>
 </html>
