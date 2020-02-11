@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2>
+  {{ category.name }}
+</h2>
+
+<section>
+  {% for product in products %}
+  <div>
+    {{ product.name }}
+  </div>
+  <div>
+    <img src="{{ product.img }}" />
+  </div>
+  <div>
+    Description: <br />
+    {{ product.des }}
+  </div>
+  <span>Qty: {{ product.qty }} </span>
+</section>
+
+{% endfor %} {% endblock %}

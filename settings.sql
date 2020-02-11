@@ -1,0 +1,4 @@
+CREATE DATABASE cloth_db;
+CREATE USER manager WITH PASSWORD 'manager';
+GRANT ALL PRIVILEGES ON DATABASE cloth_db TO manager;
+
