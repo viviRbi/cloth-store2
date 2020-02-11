@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Product
 from .product_form import ProductForm
 
@@ -24,8 +24,12 @@ def product_edit(request, id):
     if request.method == 'POST':
         form = ProductForm(request.POST)
         if form.is_valid():
-            artist.form =save()
-            return redirect('product_detail', id = product.id)
+            product.form =save()
+            return redirect('product_list')
     else: 
         form = ProductForm()
-    return render(request, 'cloth/product_detail.html', {'form':form})
+    return render(request, 'cloth/product_form.html', {'form':form})
+
+def product_delete(request, id):
+    Product.objects.get(id=id).delete()
+    return redirect('product_list')
