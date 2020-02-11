@@ -3,7 +3,7 @@
   {% for category in categories %}
   <div class="category-card">
     <h2>
-      <a href="{% url 'category_detail' pk=category.pk %}">
+      <a href="{% url 'category_detail' pk=category.id %}">
         {{ category.name }}
       </a>
     </h2>
