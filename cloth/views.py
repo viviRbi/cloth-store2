@@ -19,3 +19,13 @@ def product_create(request):
     else:
         form = ProductForm()
     return render(request, 'cloth/product_form.html',{'form':form})
+
+def product_edit(request, id):
+    if request.method == 'POST':
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            artist.form =save()
+            return redirect('product_detail', id = product.id)
+    else: 
+        form = ProductForm()
+    return render(request, 'cloth/product_detail.html', {'form':form})
