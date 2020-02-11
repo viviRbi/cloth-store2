@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Product, Category
-from .product_form import ProductForm
+from .forms import ProductForm, CategoryForm
 
 
 def product_list(request):
