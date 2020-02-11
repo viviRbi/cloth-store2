@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+{%block content%}
+<h1>Product list</h1>
+<a href="{% url 'product_create' %}">Create</a>
+{%for product in products%}
+<h2>{{product.name}}</h2>
+<a href="{% url 'product_detail' id=product.id %}">
+  Detail
+</a>
+
+{%if product.img%}
+<div style="background-image: url({{product.img.url}}); width: 30vmin; height:30vmin;">
+  {%endif%}
+
+  <p>{{product.price}}</p>
+  <a href="{% url 'product_edit' id=product.id %}">Edit</a>
+  <a href="{% url 'product_delete' id=product.id %}">Delete</a>
+</div>
+
+{%endfor%}
+{%endblock%}

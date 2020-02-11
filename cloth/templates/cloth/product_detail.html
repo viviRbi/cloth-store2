@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{%block content%}
+<h1>Product list</h1>
+<h2>{{product.name}}</h2>
+<h6><b>Price: ${{product.price}}</b> | <b>Quantity: {{product.quantity}}</b></h6>
+{%if product.img%}
+<div style="background-image: url({{product.img.url}}); width: 30vmin; height:30vmin;">
+  {%endif%}
+
+  <p>{{product.price}}</p>
+  <a href="{% url 'product_edit' id=product.id %}">Edit</a>
+  <a href="{% url 'product_delete' id=product.id %}">Delete</a>
+</div>
+{%endblock%}
