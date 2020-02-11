@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Product, Category
-from .product_form import ProductForm
+from .forms import ProductForm, CategoryForm
 
 
 def product_list(request):
@@ -18,8 +18,8 @@ def product_detail(request, id):
     return render(request, 'cloth/product_detail.html', {'product': product})
 
 
-def category_detail(request, id):
-    category = Category.objects.get(id=id)
+def category_detail(request, pk):
+    category = Category.objects.get(pk=pk)
     return render(request, 'cloth/category_detail.html', {'category': category})
 
 

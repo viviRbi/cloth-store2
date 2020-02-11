@@ -5,12 +5,14 @@
 </h2>
 
 <section>
-  {% for product in products %}
+  {% for product in category.products.all %}
   <div>
     {{ product.name }}
   </div>
   <div>
-    <img src="{{ product.img }}" />
+    {% if product.img %}
+    <img src="{{ product.img.url }}" />
+    {% endif %}
   </div>
   <div>
     Description: <br />

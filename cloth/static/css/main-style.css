@@ -60,7 +60,24 @@ h1 {
   font-family: "Helvetica Neue", sans-serif;
   letter-spacing: -0.05em;
   text-decoration: none;
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
+}
+
+.categories {
+  display: flex;
+  justify-content: space-around;
+}
+
+.category-card {
+  margin-top: 50px;
+  background-color: lightblue;
+  width: 300px;
+  height: 400px;
+  border: 1px solid black;
+  box-shadow: 5px 10px 50px gray;
+  border-radius: 20px;
+  vertical-align: middle;
+  text-align: center;
 }
 
 h2 > a {
@@ -94,10 +111,6 @@ a.delete {
   width: 400px;
 }
 
-span.nationality {
-  font-size: 0.5em;
-}
-
 .user-info {
   float: right;
 }
@@ -122,4 +135,5 @@ a.no-fav {
   width: 100vw;
   bottom: 0;
   margin: 0 auto;
+  padding: 10px;
 }
