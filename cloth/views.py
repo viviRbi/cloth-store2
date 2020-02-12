@@ -25,7 +25,7 @@ def category_detail(request, pk):
 
 def product_create(request):
     if request.method == 'POST':
-        form = ProductForm(request.POST)
+        form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
             return redirect('product_detail', id=product.id)
@@ -36,9 +36,9 @@ def product_create(request):
 
 def product_edit(request, id):
     if request.method == 'POST':
-        form = ProductForm(request.POST)
+        form = ProductForm(request.POST or None, request.FILES or None)
         if form.is_valid():
-            product.form = save()
+            product = form.save()
             return redirect('product_list')
     else:
         form = ProductForm()
